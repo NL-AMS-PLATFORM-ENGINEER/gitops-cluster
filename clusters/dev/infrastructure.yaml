@@ -2,14 +2,14 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: infra-controllers
-  namespace: flux-system
+  namespace: flux-config
 spec:
   interval: 1h
   retryInterval: 1m
   timeout: 5m
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: main-flux
   path: ./infrastructure/cloud-native-postgres
   prune: true
   wait: true
